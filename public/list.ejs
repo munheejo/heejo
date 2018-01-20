@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>heejo</title>
+    </head>
+
+    <body>
+
+         <h2>글 리스트입니다.</h2>
+         <button type='button' onClick="location.href='/write'">글작성</button>
+         <hr /><!--선긋기-->
+         <!--게시글 받아서 리스트나열-->
+         <% if(board !== undefined){%>
+         <% for(var i=board.length-1; i>=0; i--){%>
+              <p><a href = '/show/<%= board[i]._id%>'>제목: <%= board[i].title %></a></p>
+              <p>글쓴이: <%= board[i].author %></p>
+              <p>작성시간: <%= board[i].date %></p>
+              <hr />
+         <% }} %>
+    </body>
+
+</html>

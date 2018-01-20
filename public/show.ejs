@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+     <head>
+
+     </head>
+     <body>
+          <hr />
+          <!--show로 들어와서 id랑 맞는 글을 보여준다-->
+         <% if(board !== undefined){%>
+              <p>제목: <%= board[0].title %></p>
+              <p>글쓴이: <%= board[0].author %></p>
+              <p>내용: <%= board[0].content %></p>
+              <p>작성시간: <%= board[0].date %></p>
+              <hr />
+         <% } %>
+         <form action="/delete/<%= board[0]._id%>" method='post'>
+             <button>삭제</button>
+        </form>
+         <form action="/update2/<%= board[0]._id%>" method='post'>
+             <button>수정</button>
+        </form>
+
+        <form action="/reply"
+     </body>
+</html>
